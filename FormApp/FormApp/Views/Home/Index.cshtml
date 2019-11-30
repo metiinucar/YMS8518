@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Sayfa Başlığı</title>
+    <script>
+        function Gonder() {
+            //var fullName = document.getElementById("FullName").value;
+            //var email = document.getElementById("Email").value;
+            //var message = document.getElementById("Message").value;
+
+            var fullName = $("#FullName").val();   
+            var email = $("#Email").val();
+            var message = $("#Message").val();
+
+            if (fullName.length < 3 || fullName.length > 150) {
+                alert("Adını lütfen rica ediyorum 2 karakterden kısa 150 karakterden uzun girme lan !");
+                return;
+            }
+            else if (email.length < 6 || email.length > 345) {
+                alert("E-maili lütfen rica ediyorum 6 karakterden kısa 345 karakterden uzun girme lan !");
+                return;
+            }
+            else if (message.length < 2 || email.length > 1024) {
+                alert("Mesajını lütfen rica ediyorum 2 karakterden kısa 1024 karakterden uzun girme lan !");
+                return;
+            }
+            $("#Form").hide();
+            $("#Sending").show();
+            var data = {
+                FullName: fullName,
+                Email: email,
+                Message: message
+            };
+
+            var json = JSON.stringify(data);
+
+            $.ajax({
+                type: "POST",
+                url: "/Contact/Send",
+                data: json,
+                success: Gonder_Callback,  //başarılı olarak tamamladıgı zaman bu istek hangi method gelecek
+                dataType: "json",
+                'contentType': 'application/json'
+            });
+
+            
+        }
+
+        function Gonder_Callback(result) {
+            $("#Sending").hide();
+            $("#Sent").show();
+
+            console.log(result);
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <form>
+            <input type="text" id="FullName" placeholder="Adınız" />
+            <br />
+            <input type="email" id="Email" placeholder="E-posta Adresiniz" />
+            <br />
+            <textarea id="Message" placeholder="Mesajınız...."></textarea>
+            <br />
+            <input type="button" value="Gönder" onclick="Gonder();" />
+        </form>
+    </div>
+    <div style="display: none;" id="Sending">
+        <h3>Mesaj gönderiliyor...</h3>
+    </div>
+    <div style="display: none;" id="Sent">
+        <h3>Mesaj gönderildi!</h3>
+    </div>
+
+</body>
+</html>
