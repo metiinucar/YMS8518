@@ -1,8 +1,17 @@
-﻿@{ 
+﻿@model List<GuestBook.data.Model.GuestNote>
+@{ 
     Layout = "_Layout";
 }
 
 <h1>Ziyaretçi Defteri</h1>
+<div>
+    @{ 
+        foreach (var guestNote in Model)
+        {
+            <div> Adı: @guestNote.Name - Soyadı :  @guestNote.Surname - Mesajı :  @guestNote.Message  </div>
+        }
+    }
+</div>
 <div id="GuestBook-Index-Form">
     <form>
         <input type="text" id="Name"placeholder="Adınız" />

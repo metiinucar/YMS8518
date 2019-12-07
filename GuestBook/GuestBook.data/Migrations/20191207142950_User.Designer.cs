@@ -4,14 +4,16 @@ using GuestBook.data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuestBook.data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191207142950_User")]
+    partial class User
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,10 +67,6 @@ namespace GuestBook.data.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new { id = 1, Password = "12345678", Username = "admin" }
-                    );
                 });
 #pragma warning restore 612, 618
         }

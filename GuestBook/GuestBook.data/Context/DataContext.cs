@@ -8,6 +8,17 @@ namespace GuestBook.data.Context
         public DataContext(DbContextOptions<Context.DataContext> options) : base(options)
         { }
 
-        public DbSet<GuestNote> GuestNote { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(new User
+            {
+                id = 1,
+                Username = "admin",
+                Password = "12345678"
+            });
+            base.OnModelCreating(modelBuilder);
+        }
+        public DbSet<GuestNote> GuestNotes { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
