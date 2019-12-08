@@ -1,0 +1,24 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int  cift = 0, tek = 0;
+            for (int i = 0; i <= 1000; i++)
+            {
+                if (i % 2 == 0)
+                    cift++;
+                else
+                    tek++;
+            }
+            Console.WriteLine("Çift adedi:"+ cift);
+            Console.WriteLine("Tek adedi:"+ tek);
+
+            Console.ReadKey();
+        
+        }
+    }
+}

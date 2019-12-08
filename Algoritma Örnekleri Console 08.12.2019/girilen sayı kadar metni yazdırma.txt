@@ -1,0 +1,24 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.Write("Adýnýzý ve Soyadýnýzý giriniz:  ");
+            string adsoyad = Console.ReadLine();
+            
+            Console.Write("Adýnýzý kaç kere yazdýracaðýnýzý giriniz : ");
+            int sayi = Convert.ToInt32(Console.ReadLine());
+            
+            for (int i = 0; i < sayi; i++)
+            {
+                Console.WriteLine(adsoyad);
+            }
+            Console.ReadKey();
+
+
+        }
+    }
+}

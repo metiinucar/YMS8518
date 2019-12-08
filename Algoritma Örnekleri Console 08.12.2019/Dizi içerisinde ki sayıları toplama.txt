@@ -1,0 +1,23 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int topla = 0;
+            int [] dizi = new int[] { 2, 5, 7, 9, 12 };
+
+            for (int i=0; i<dizi.Length; i++)
+            {
+               
+                topla += dizi[i];
+            }
+            Console.WriteLine("Sayýlarýn Toplamý = "+ topla);
+            Console.ReadKey();
+
+        
+        }
+    }
+}

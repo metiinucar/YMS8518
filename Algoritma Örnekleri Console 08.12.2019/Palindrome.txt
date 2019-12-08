@@ -1,0 +1,30 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string metin;
+            string reversedMetin = string.Empty;
+            Console.Write("Tersten Yazýlacak Metni Giriniz = ");
+            metin = Console.ReadLine();
+            for (int i = 0; i <= metin.Length - 1; i++)
+            {
+                reversedMetin += metin[metin.Length - i - 1];
+            }
+            if(metin == reversedMetin)
+            {
+                //pal
+                Console.Write("Palindrom");
+            }
+            else
+            {
+                ///deðil
+                Console.Write("Palindrom deðil.");
+            }
+            Console.ReadLine();
+        }
+    }
+}

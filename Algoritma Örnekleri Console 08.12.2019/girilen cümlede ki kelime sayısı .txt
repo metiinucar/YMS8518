@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string cümle;
+            Console.Write("Cümle Giriniz  : ");
+            cümle = Console.ReadLine();
+            string[] kelime = cümle.Split(' ');
+            Console.WriteLine("Cümlede ki kelime sayýnýz  :" + kelime.Length);
+            Console.ReadKey();
+
+        }
+    }
+}

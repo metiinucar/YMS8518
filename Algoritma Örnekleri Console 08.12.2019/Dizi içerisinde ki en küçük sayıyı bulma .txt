@@ -1,0 +1,26 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int kucuk = Int32.MaxValue; // Küçük sayýyý bulmak için maxvalue, büyük sayýyý bulmak için minvalue
+            int [] dizi = new int[] { 66,49,52,54,1 };  //kendi tanýmladýgýmýz dizi
+
+            for (int i = 0; i < dizi.Length; i++) // for döngüsü içinde dizi içerisinde ki sayýlarý kontrol ediyoruz.
+            {
+                if (dizi[i] < kucuk) // 
+                {
+                    kucuk = dizi[i];
+                   
+                }
+            }
+            Console.WriteLine("Bulunan en küçük sayý: {0}", kucuk);
+            Console.ReadKey();
+
+        
+        }
+    }
+}

@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+
+            int[] array = { 545, 23, 43, 32, 23, 45, 4, 45, 45, 7, 47, 23, 12312, 213232, 2323 };
+            int avg = (int)array.Average();
+            List<Tuple<int, int>> list = new List<Tuple<int, int>>();
+
+            foreach (int sayi in array)
+            {
+                list.Add(new Tuple<int, int>(sayi, sayi - avg));
+            }
+
+            Tuple<int, int> first = new Tuple<int, int>(0, 0);
+            Tuple<int, int> second = new Tuple<int, int>(0, 0);
+
+            for (int i = 0; i < int.MaxValue; i++)
+            {
+                Tuple<int, int> m = list.FirstOrDefault(a => a.Item2.Equals(i));
+                if (m != null)
+                {
+                    first = m;
+                    break;
+                }
+            }
+
+            for (int i = 0; i > int.MinValue; i--)
+            {
+                Tuple<int, int> m = list.FirstOrDefault(a => a.Item2.Equals(i));
+                if (m != null)
+                {
+                    second = m;
+                    break;
+                }
+            }
+
+            if (first.Item2 - second.Item2 > second.Item2 - first.Item2)
+            {
+                Console.WriteLine(second.Item1);
+            }
+            else
+            {
+                Console.WriteLine(first.Item1);
+            }
+
+            Console.ReadKey();
+
+
+           
+
+        
+        }
+    }
+}

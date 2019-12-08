@@ -1,0 +1,26 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.Write("Sayý giriniz : ");
+            int sayi;
+            sayi = Convert.ToInt32(Console.ReadLine());
+            if(sayi % 2 == 0)
+            {
+                Console.WriteLine("Sayý çifttir.");
+            }
+            else
+            {
+                Console.WriteLine("Sayý tektir.");
+            }
+
+           
+            Console.ReadKey();
+        
+        }
+    }
+}

@@ -1,0 +1,32 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            for (int i=0; i <=10; i++)
+            {
+                Console.Write("Sayý giriniz : ");
+                int sayi;
+                sayi = Convert.ToInt32(Console.ReadLine());
+                if (sayi>0)
+                {
+                    Console.WriteLine("Sayý pozitif.");
+                }
+                else if (sayi < 0)
+                {
+                    Console.WriteLine("Sayý negatif.");
+                }
+                else
+                {
+                    Console.WriteLine("sayý sýfýrdýr.");
+                }
+            }
+           
+            Console.ReadKey();
+        
+        }
+    }
+}

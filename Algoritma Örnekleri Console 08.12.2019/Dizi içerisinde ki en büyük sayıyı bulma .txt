@@ -1,0 +1,26 @@
+using System;
+
+namespace Algoritma
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int buyuk = Int32.MinValue;
+            int [] dizi = new int[] { 66,49,52,54 };
+
+            for (int i = 0; i < dizi.Length; i++)
+            {
+                if (dizi[i] > buyuk)
+                {
+                    buyuk = dizi[i];
+                   
+                }
+            }
+            Console.WriteLine("Bulunan en büyük sayý: {0}", buyuk);
+            Console.ReadKey();
+
+        
+        }
+    }
+}
